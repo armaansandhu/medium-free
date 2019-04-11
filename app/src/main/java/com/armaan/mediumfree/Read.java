@@ -36,8 +36,12 @@ public class Read extends AppCompatActivity {
         view = (WebView) findViewById(R.id.web);
         view.setVisibility(View.GONE);
         view.setWebViewClient(new WebViewClient(){
-            @Override public void onPageCommitVisible(WebView view, String url) {
-                super.onPageCommitVisible(view, url);
+            @Override public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+
+                view.loadUrl("javascript:(function() { " +
+                        "document.getElementsByClassName('postMeterBar')[0].style.display='none';" +
+                   "})()");
                 mProgressBar.setVisibility(ProgressBar.GONE);
                 view.setVisibility(View.VISIBLE);
             }
