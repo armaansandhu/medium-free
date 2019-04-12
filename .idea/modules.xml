@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Summarizer - Copy.iml" filepath="$PROJECT_DIR$/Summarizer - Copy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MediumFree.iml" filepath="$PROJECT_DIR$/MediumFree.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
