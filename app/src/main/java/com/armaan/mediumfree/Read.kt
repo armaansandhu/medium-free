@@ -3,6 +3,7 @@ package com.armaan.mediumfree
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
@@ -28,6 +29,7 @@ class Read : AppCompatActivity() {
 
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_read)
@@ -69,6 +71,7 @@ class Read : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     internal fun handleSendText(intent: Intent) {
         val sharedText = intent.getStringExtra(Intent.EXTRA_TEXT)
         removeCookies()
@@ -79,6 +82,7 @@ class Read : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     internal fun removeCookies() {
         val cookieManager = CookieManager.getInstance()
 
@@ -88,7 +92,7 @@ class Read : AppCompatActivity() {
                 Log.d("COOKIE_REMOVED", "Cookie removed: " + aBoolean!!)
             }
         } else
-            cookieManager.removeAllCookie()
+            cookieManager.removeAllCookies(null)
     }
 
     companion object {
